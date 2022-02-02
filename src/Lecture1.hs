@@ -114,16 +114,10 @@ and finds a sum of the numbers inside this string.
 The string contains only spaces and/or numbers.
 -}
 strSum :: String -> Int
-strSum str = go 0 (toNums (words str))
+strSum str = sum (toNums (words str))
        where
         toNums :: [String] -> [Int]
-        toNums s = (map (\ x -> read x ::Int) s)
-        go :: Int -> [Int] -> Int
-        go s nums =
-           if null nums
-           then s
-           else go (s + (head nums)) (tail nums)
-
+        toNums s = (map (\ x -> read x) s)
 
 {- | Write a function that takes a number and a list of numbers and
 returns a string, saying how many elements of the list are strictly
