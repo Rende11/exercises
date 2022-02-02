@@ -92,7 +92,6 @@ test-suite exercises-test
                        Test.Lecture2
                        Test.Lecture3
                        Test.Lecture4
-
   build-depends:       exercises
                      , hspec            ^>= 2.9
                      , hspec-hedgehog   ^>= 0.0

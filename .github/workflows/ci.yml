@@ -210,3 +210,4 @@ jobs:
     - name: Lecture 4 - Unit Tests
       run: |
         cabal run exercises-test --enable-tests -- -m "Lecture 4"
+
