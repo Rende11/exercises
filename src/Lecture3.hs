@@ -35,6 +35,10 @@ module Lecture3
     ) where
 
 
+-- VVV If you need to import libraries, do it after this line ... VVV
+
+-- ^^^ and before this line. Otherwise the test suite might fail  ^^^
+
 -- $setup
 -- >>> import Data.Semigroup
 
