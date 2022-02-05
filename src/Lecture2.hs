@@ -63,7 +63,7 @@ lazyProduct (n : ns) = n * (lazyProduct ns)
 -}
 duplicate :: [a] -> [a]
 duplicate [] = []
-duplicate (x : xs) = [x, x] ++ duplicate xs
+duplicate (x : xs) = x : x : duplicate xs
 
 {- | Implement function that takes index and a list and removes the
 element at the given position. Additionally, this function should also
@@ -85,7 +85,7 @@ removeAt idx l
     in
       case right of
         [] -> (Nothing, left)
-        _ -> (Just (head right), left ++ tail right)
+        val : rest -> (Just val, left ++ rest)
       
      
 
@@ -116,7 +116,7 @@ spaces.
 🕯 HINT: look into Data.Char and Prelude modules for functions you may use.
 -}
 dropSpaces :: String -> String
-dropSpaces string = takeWhile (not . Data.Char.isSpace) (dropWhile Data.Char.isSpace string)
+dropSpaces = takeWhile (not . isSpace) . dropWhile isSpace
 
 {- |
 
@@ -300,7 +300,6 @@ verify that.
 [1,2,3,4,7]
 -}
 merge :: [Int] -> [Int] -> [Int]
-merge [] [] = []
 merge xs [] = xs
 merge [] ys = ys
 merge (x : xs) (y : ys)
